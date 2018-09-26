@@ -2,6 +2,16 @@ public class Stock {
 
     private String name;
 
+    public Stock(){
+
+    }
+
+    public Stock(String name, int price, int quantity) {
+        setName(name);
+        setPrice(price);
+        setQuantity(quantity);
+    }
+
     public String getName() {
         return name;
     }

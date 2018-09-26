@@ -34,6 +34,6 @@ public class StockTest {
         when(stockService.getPrice(miami)).thenReturn(200.0);
         when(stockService.getPrice(payPal)).thenReturn(400.0);
 
-        System.out.println(stockPortfolio.getMarketValue());;
+        System.out.println(stockPortfolio.getMarketValue());
     }
 }
