@@ -5,16 +5,28 @@ import com.esethuraman.learning.unitTests.business.DataService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
+// when shorthand Mock annotations are used, this annotation must be used
+@RunWith(MockitoJUnitRunner.class)
 public class BusinessTestsWithMock {
 
+    // when shorthand @Mock is used, this annotation should be used for enabling
+    // the mocked object to be injected
+    @InjectMocks
     BusinessImpl business;
+
+    // @Mock is the shorthand for mockedDataService = Mockito.mock(DataService.class);
+    @Mock
     DataService mockedDataService;
+
     @Before
     public void setUp(){
         business = new BusinessImpl();
-        mockedDataService = Mockito.mock(DataService.class);
         business.setDataService(mockedDataService);
     }
 
